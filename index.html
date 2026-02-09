@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of a Fullstack Web Developer seeking OJT opportunities.">
+    <meta name="author" content="Sayaka04">
+
+    <title>Sayaka04 | OJT Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: '#38BDF8', // Sky blue
+                        accentHover: '#0EA5E9',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* THE STRIPE LOGIC:
+           We create two types of glass sections.
+           1. Dark Glass: Very opaque, easy to read text.
+           2. Light Glass: More transparent, shows the video more clearly.
+        */
+
+        .glass-dark {
+            background: rgba(2, 6, 23, 0.95);
+            /* Almost solid black/slate */
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-light {
+            background: rgba(15, 23, 42, 0.60);
+            /* More transparent, video visible */
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Card styles within sections */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #38BDF8;
+            transform: translateY(-5px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #38BDF8, #818CF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="text-slate-300 antialiased selection:bg-accent selection:text-white">
+
+    <video id="myVideo" autoplay muted loop playsinline
+        class="fixed top-0 left-0 min-w-full min-h-full object-cover -z-50">
+        <source src="assets/vid/livewallpaper.mp4" type="video/mp4" />
+    </video>
+
+    <div class="fixed inset-0 bg-slate-950/40 -z-40"></div>
+
+
+    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-white tracking-wide">
+                <span class="text-accent">⊛</span> Sayaka04
+            </a>
+
+            <ul class="hidden md:flex space-x-8 text-sm font-medium">
+                <li><a href="#home" class="hover:text-accent transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
+                <li><a href="#skills" class="hover:text-accent transition-colors">Skills</a></li>
+                <li><a href="#projects" class="hover:text-accent transition-colors">Projects</a></li>
+                <li><a href="#certificates" class="hover:text-accent transition-colors">Certificates</a></li>
+                <li><a href="#contact"
+                        class="px-4 py-2 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition-all">Contact</a>
+                </li>
+            </ul>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-white/10 p-4 space-y-3">
+            <a href="#home" class="block hover:text-accent">Home</a>
+            <a href="#projects" class="block hover:text-accent">Projects</a>
+            <a href="#contact" class="block text-accent">Contact</a>
+        </div>
+    </nav>
+
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
+            <div class="flex-1 text-center lg:text-left z-10">
+
+            </div>
+
+            <div class="flex-1 flex justify-center lg:justify-end z-10">
+                <div class="relative w-64 h-64 lg:w-80 lg:h-80">
+                    <div class="absolute inset-0 bg-accent rounded-full blur-[80px] opacity-20 animate-pulse"></div>
+                    <img src="assets/img/profile/profile-picture.jpg" alt="Profile"
+                        class="relative w-full h-full object-cover rounded-2xl border-4 border-white/10 shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="skills" class="py-20 glass-light">
+        <div class="container mx-auto px-6">
+
+            <h2 class="text-3xl font-bold text-white text-center mb-8 drop-shadow-lg">Engineering Domains</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 mb-20">
+                <div
+                    class="glass-card bg-slate-900/60 p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-globe text-3xl text-indigo-400 mb-2"></i>
+                    <span class="font-bold text-white text-sm">Web Arch</span>
+                </div>
+                <div
+                    class="glass-card bg-slate-900/60 p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-desktop text-3xl text-orange-400 mb-2"></i>
+                    <span class="font-bold text-white text-sm">Software</span>
+                </div>
+                <div
+                    class="glass-card bg-slate-900/60 p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-database text-3xl text-blue-400 mb-2"></i>
+                    <span class="font-bold text-white text-sm">Data Logic</span>
+                </div>
+                <div
+                    class="glass-card bg-slate-900/60 p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-microchip text-3xl text-green-400 mb-2"></i>
+                    <span class="font-bold text-white text-sm">PCB & IoT</span>
+                </div>
+                <div
+                    class="glass-card bg-slate-900/60 p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-brain text-3xl text-purple-400 mb-2"></i>
+                    <span class="font-bold text-white text-sm">AI & LLM</span>
+                </div>
+                <div
+                    class="glass-card bg-slate-900/60 p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-layer-group text-3xl text-slate-400 mb-2"></i>
+                    <span class="font-bold text-white text-sm">Env & Tools</span>
+                </div>
+                <div
+                    class="glass-card bg-slate-900/60 p-4 rounded-xl flex flex-col items-center justify-center text-center hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-shield-halved text-3xl text-red-400 mb-2"></i>
+                    <span class="font-bold text-white text-sm">Sec & Ops</span>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical <span
+                    class="text-indigo-400">Arsenal</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+
+                <div
+                    class="glass-card bg-slate-900/80 p-8 rounded-2xl border border-white/5 transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-6 text-indigo-400 text-2xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Web Development</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-laravel text-red-500 w-5"></i>
+                            Laravel Framework
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-php text-indigo-400 w-5"></i> PHP 8+
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-js text-yellow-400 w-5"></i>
+                            JavaScript
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-html5 text-orange-500 w-5"></i> HTML5
+                            & CSS3</li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-bootstrap text-purple-500 w-5"></i>
+                            Bootstrap &
+                            Tailwind</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="glass-card bg-slate-900/80 p-8 rounded-2xl border border-white/5 transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-6 text-orange-400 text-2xl">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Software Languages</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-java text-orange-400 w-5"></i> Java
+                            (OOP)</li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-python text-blue-400 w-5"></i> Python
+                            Scripting
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-android text-green-400 w-5"></i>
+                            Android
+                            Development</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-terminal text-slate-400 w-5"></i> Bash
+                            Scripting
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="glass-card bg-slate-900/80 p-8 rounded-2xl border border-white/5 transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 text-blue-400 text-2xl">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Data Management</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-server text-blue-300 w-5"></i> MySQL
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-table-columns text-slate-400 w-5"></i>
+                            Database
+                            Design (3NF)</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-bolt text-yellow-400 w-5"></i>
+                            Eloquent ORM</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-file-code text-green-400 w-5"></i>
+                            JSON Handling
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="glass-card bg-slate-900/80 p-8 rounded-2xl border border-white/5 transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-slate-500/10 rounded-lg flex items-center justify-center mb-6 text-slate-400 text-2xl">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">IDEs & Environment</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-code text-blue-500 w-5"></i> VSCode
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-android text-green-400 w-5"></i>
+                            Android Studio
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-rocket text-orange-400 w-5"></i>
+                            Postman</li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-git-alt text-red-500 w-5"></i> Git &
+                            GitHub</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="glass-card bg-slate-900/80 p-8 rounded-2xl border border-white/5 transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 text-green-400 text-2xl">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Electronics & PCB</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-pen-ruler text-green-500 w-5"></i> PCB
+                            Fabrication
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-flask text-green-400 w-5"></i> Etching
+                            (Ferric)
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-plug text-yellow-400 w-5"></i>
+                            Soldering</li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-raspberry-pi text-red-500 w-5"></i>
+                            Raspberry Pi
+                            / GPIO</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="glass-card bg-slate-900/80 p-8 rounded-2xl border border-white/5 transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 text-purple-400 text-2xl">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">AI & Automation</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-brain text-purple-500 w-5"></i> Ollama
+                            / Local
+                            LLMs</li>
+                        <li class="flex items-center gap-3"><i
+                                class="fa-solid fa-wand-magic-sparkles text-yellow-400 w-5"></i>
+                            AI-Assisted Dev</li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-python text-blue-400 w-5"></i>
+                            Auto-Scripting
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="glass-card bg-slate-900/80 p-8 rounded-2xl border border-white/5 transition-all hover:-translate-y-1 lg:col-start-2">
+                    <div
+                        class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-6 text-red-400 text-2xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Security & DevOps</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-network-wired text-green-500 w-5"></i>
+                            Wireshark &
+                            Nmap</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-bug text-red-400 w-5"></i> Burp Suite
+                            / DVWA</li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-linux text-yellow-400 w-5"></i> Linux
+                            VPS Admin
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-server text-blue-400 w-5"></i> NGINX
+                            Configuration
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                    Operational <span class="text-blue-500">Context</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+
+                <div
+                    class="glass-card bg-slate-900/60 border border-white/5 p-8 rounded-2xl hover:border-blue-500/30 transition-all">
+                    <div class="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
+                        <div
+                            class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 text-2xl">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Web Architecture</h3>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Full-Stack Integration</p>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-brands fa-laravel text-red-500"></i>
+                                <span class="text-white font-bold text-sm">Laravel Ecosystem</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Orchestrates complex web environments beyond standard CRUD. Integrates real-time data
+                                via
+                                WebSockets, manages communication services (SMTP), and exposes custom APIs.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-brands fa-php text-purple-400"></i>
+                                <span class="text-white font-bold text-sm">PHP Implementation</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Utilized as the foundational logic layer for MVC controllers and rapid prototyping
+                                before
+                                abstracting features into strict, service-oriented Laravel structures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-card bg-slate-900/60 border border-white/5 p-8 rounded-2xl hover:border-orange-500/30 transition-all">
+                    <div class="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
+                        <div
+                            class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-400 text-2xl">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Software Engineering</h3>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Desktop & System Logic</p>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-brands fa-java text-orange-500"></i>
+                                <span class="text-white font-bold text-sm">Java & OOP</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Develops robust desktop applications with strict object-oriented patterns. Manages
+                                dependencies
+                                via Maven and ensures type safety for critical operations.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-brands fa-python text-blue-400"></i>
+                                <span class="text-white font-bold text-sm">Python Automation</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Deployed as a utility language for high-speed automation scripts, data processing
+                                pipelines,
+                                and
+                                bridging local AI models with main application stacks.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-brands fa-android text-green-400"></i>
+                                <span class="text-white font-bold text-sm">Mobile Applets</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Extends core Java logic into mobile environments via Android Studio, creating
+                                lightweight
+                                native
+                                tools for remote system interaction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hidden-context" class="contents hidden">
+
+                    <div
+                        class="glass-card bg-slate-900/60 border border-white/5 p-8 rounded-2xl hover:border-blue-500/30 transition-all">
+                        <div class="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
+                            <div
+                                class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 text-2xl">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Data Management</h3>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider">Schema & Optimization</p>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-table text-slate-300"></i>
+                                    <span class="text-white font-bold text-sm">Schema Design (3NF)</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Strictly adheres to 3rd Normal Form (3NF) for database integrity. Architects complex
+                                    ERDs
+                                    spanning 17+ tables for efficient data retrieval.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-bolt text-yellow-400"></i>
+                                    <span class="text-white font-bold text-sm">Eloquent & SQL</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Balances Eloquent ORM for maintainability with raw SQL for performance-critical
+                                    queries.
+                                    Views database structure as distinct from application logic.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card bg-slate-900/60 border border-white/5 p-8 rounded-2xl hover:border-green-500/30 transition-all">
+                        <div class="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
+                            <div
+                                class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center text-green-400 text-2xl">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Hardware & IoT</h3>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider">Physical Computing</p>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-pen-ruler text-green-500"></i>
+                                    <span class="text-white font-bold text-sm">PCB Fabrication</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Executes end-to-end circuit production—from perfboard prototyping to ferric chloride
+                                    etching
+                                    and soldering components.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-brands fa-raspberry-pi text-red-500"></i>
+                                    <span class="text-white font-bold text-sm">Embedded Systems</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Interfaces Raspberry Pi GPIO pins with custom sensors. Streams environmental data
+                                    via
+                                    MQTT
+                                    to central software dashboards.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-plug text-yellow-400"></i>
+                                    <span class="text-white font-bold text-sm">Serial Port Comm</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Writes custom, low-level Java drivers to interface directly with hardware COM ports,
+                                    enabling raw sensor data ingestion.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card bg-slate-900/60 border border-white/5 p-8 rounded-2xl hover:border-purple-500/30 transition-all">
+                        <div class="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
+                            <div
+                                class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 text-2xl">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">AI & Automation</h3>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider">Inference & Generation</p>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-server text-purple-400"></i>
+                                    <span class="text-white font-bold text-sm">Local LLM Integration</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Embeds local LLMs (Ollama) into web architectures to provide privacy-focused AI
+                                    analysis
+                                    via
+                                    custom API endpoints.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-yellow-400"></i>
+                                    <span class="text-white font-bold text-sm">AI-Assisted Workflow</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Leverages AI generation tools to accelerate logic implementation and styling,
+                                    ensuring
+                                    rapid
+                                    delivery without compromising code structure.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card bg-slate-900/60 border border-white/5 p-8 rounded-2xl hover:border-red-500/30 transition-all">
+                        <div class="flex items-center gap-4 mb-8 pb-6 border-b border-white/5">
+                            <div
+                                class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center text-red-400 text-2xl">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Security & Ops</h3>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider">Infrastructure & Hardening
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-brands fa-linux text-yellow-400"></i>
+                                    <span class="text-white font-bold text-sm">VPS & Infrastructure</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Deploys and hardens Linux VPS environments, managing SSH access and file permissions
+                                    for
+                                    secure production.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-server text-blue-400"></i>
+                                    <span class="text-white font-bold text-sm">NGINX Configuration</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Configures NGINX as a high-performance reverse proxy and load balancer to ensure
+                                    application
+                                    stability under load.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-bug text-red-400"></i>
+                                    <span class="text-white font-bold text-sm">Vulnerability Analysis</span>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Conducts network traffic analysis using Wireshark and Burp Suite to identify and
+                                    mitigate
+                                    security flaws like CSRF and SQL Injection.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flex justify-center mt-12 relative z-10">
+                <button id="toggle-context-btn"
+                    class="group flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-full text-sm font-medium transition-all border border-white/5 hover:border-white/10">
+                    <span class="btn-text">View Full Context</span>
+                    <i class="fa-solid fa-chevron-down group-hover:translate-y-0.5 transition-transform"></i>
+                </button>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const toggleBtn = document.getElementById('toggle-context-btn');
+                    const hiddenContext = document.getElementById('hidden-context');
+                    const btnText = toggleBtn.querySelector('.btn-text');
+                    const btnIcon = toggleBtn.querySelector('i');
+
+                    if (toggleBtn && hiddenContext) {
+                        toggleBtn.addEventListener('click', () => {
+                            // Toggle the visibility
+                            hiddenContext.classList.toggle('hidden');
+
+                            // Update button text and icon
+                            const isHidden = hiddenContext.classList.contains('hidden');
+
+                            if (isHidden) {
+                                btnText.textContent = 'View Full Context';
+                                btnIcon.classList.remove('rotate-180');
+                            } else {
+                                btnText.textContent = 'Show Less';
+                                btnIcon.classList.add('rotate-180');
+                            }
+                        });
+                    }
+                });
+            </script>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <section id="projects" class="py-20 glass-dark">
+        <div class="container mx-auto px-6">
+
+            <h2 class="text-3xl font-bold text-white mb-16 text-center drop-shadow-lg">
+                Featured <span class="text-indigo-400">Projects</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div
+                    class="group relative rounded-2xl bg-slate-900/40 border border-white/10 hover:border-indigo-500/30 transition-all hover:-translate-y-1 flex flex-col">
+
+                    <div class="p-2 pb-0">
+                        <div
+                            class="relative aspect-video overflow-hidden rounded-xl border border-white/5 bg-slate-900">
+                            <img src="assets/img/project/smart-sorter-ai.png" alt="Dashboard Screenshot"
+                                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">SmartSorterAI</h3>
+                            <span
+                                class="px-3 py-1 text-xs font-bold text-slate-300 bg-slate-700/50 rounded-full border border-white/10">v1.0</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Laravel</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Ollama
+                                LLM & VLM</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Digital
+                                Asset Management (DAM)</span>
+                        </div>
+
+                        <p class="text-slate-400 mb-6 leading-relaxed line-clamp-3">
+                            A local-first DAM that automates image organization via a dual-stage AI pipeline. It
+                            combines visual perception with
+                            semantic reasoning to sort files into user-defined folders, ensuring complete data privacy.
+                        </p>
+
+                        <div class="mt-auto grid grid-cols-2 gap-4">
+                            <a href="https://github.com/sayaka04/laravel-ai-image-sorter" target="_blank"
+                                rel="noopener noreferrer"
+                                class="py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+
+                            <a href="./projects/smart_sorter_ai/index.html" target="_blank"
+                                class="py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-white/5 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-eye"></i> UI Preview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div
+                    class="group relative rounded-2xl bg-slate-900/40 border border-white/10 hover:border-indigo-500/30 transition-all hover:-translate-y-1 flex flex-col">
+
+                    <div class="p-2 pb-0">
+                        <div
+                            class="relative aspect-video overflow-hidden rounded-xl border border-white/5 bg-slate-900">
+                            <img src="assets/img/project/serve_it.png" alt="Dashboard Screenshot"
+                                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">ServeIT</h3>
+                            <span
+                                class="px-3 py-1 text-xs font-bold text-slate-300 bg-slate-700/50 rounded-full border border-white/10">Source
+                                Code</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Laravel</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">WebSockets</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">VPS</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Algorithm</span>
+                        </div>
+
+                        <p class="text-slate-400 mb-6 leading-relaxed line-clamp-3">
+                            A centralized API management system handling 10k+ requests/sec. Implemented rate limiting,
+                            JWT authentication, and automated documentation generation using Swagger.
+                        </p>
+
+                        <div class="mt-auto grid grid-cols-2 gap-4">
+                            <button
+                                class="py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </button>
+
+                            <button
+                                class="py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-white/5 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-book-open"></i> Context
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div
+                    class="group relative rounded-2xl bg-slate-900/40 border border-white/10 hover:border-orange-500/30 transition-all hover:-translate-y-1 flex flex-col">
+
+                    <div class="p-2 pb-0">
+                        <div
+                            class="relative aspect-video overflow-hidden rounded-xl border border-white/5 bg-slate-900">
+                            <img src="ss5.png" alt="IoT Device Screenshot"
+                                class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-orange-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">Visual Novel Engine</h3>
+                            <span
+                                class="px-3 py-1 text-xs font-bold text-orange-400 bg-orange-400/10 rounded-full border border-orange-400/20">Prototype</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Java</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Game
+                                Engine</span>
+                        </div>
+
+                        <p class="text-slate-400 mb-6 leading-relaxed line-clamp-3">
+                            Custom PCB design and Python firmware for environmental monitoring. Data is streamed via
+                            MQTT to a local dashboard for real-time analysis and alerts.
+                        </p>
+
+                        <div class="mt-auto grid grid-cols-2 gap-4">
+                            <button
+                                class="py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-semibold transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play"></i> Demo
+                            </button>
+
+                            <button
+                                class="py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-white/5 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-book-open"></i> Context
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl bg-slate-900/40 border border-white/10 hover:border-orange-500/30 transition-all hover:-translate-y-1 flex flex-col">
+
+                    <div class="p-2 pb-0">
+                        <div
+                            class="relative aspect-video overflow-hidden rounded-xl border border-white/5 bg-slate-900">
+                            <img src="assets/img/project/serial_port_gpio.jpg" alt="IoT Device Screenshot"
+                                class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-orange-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white">Serial Port GPIO</h3>
+                            <span
+                                class="px-3 py-1 text-xs font-bold text-orange-400 bg-orange-400/10 rounded-full border border-orange-400/20">Prototype</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Java</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Serial
+                                Port Programming</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">Electronics</span>
+                            <span
+                                class="px-2 py-1 text-xs text-slate-300 bg-slate-800 rounded border border-white/5">PCB</span>
+                        </div>
+
+                        <p class="text-slate-400 mb-6 leading-relaxed line-clamp-3">
+                            Custom PCB design and Python firmware for environmental monitoring. Data is streamed via
+                            MQTT to a local dashboard for real-time analysis and alerts.
+                        </p>
+
+                        <div class="mt-auto grid grid-cols-2 gap-4">
+                            <button
+                                class="py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-semibold transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play"></i> Demo
+                            </button>
+
+                            <button
+                                class="py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-white/5 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-book-open"></i> Context
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="certificates" class="py-20 glass-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-12 drop-shadow-md">Certifications</h2>
+
+            <div
+                class="max-w-4xl mx-auto glass-card bg-slate-900/80 p-8 rounded-2xl mb-12 flex flex-col md:flex-row items-center gap-8">
+                <img src="assets/img/logo/University_of_Mindanao_Logo.png" class="w-24 h-24 object-contain"
+                    alt="UM Logo">
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white">BS in Information Technology</h3>
+                    <p class="text-accent font-medium">University of Mindanao, Matina Campus</p>
+                    <p class="text-slate-300 text-sm mt-2">
+                        Software Engineering, Web Systems, and Database Administration.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="text-white font-bold text-center pt-3 pb-3">CERTIPORT</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="assets/pdf/certiport/certiport_java.pdf" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/certiport/certiport_java.jpg" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">Java Programming</h4>
+                </a>
+                <a href="assets/pdf/certiport/certiport_html_and_css.pdf" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/certiport/certiport_html_and_css.jpg" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">HTML & CSS</h4>
+                </a>
+                <a href="assets/pdf/certiport/certiport_databases.pdf" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/certiport/certiport_databases.jpg" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">Database Management</h4>
+                </a>
+                <a href="assets/pdf/certiport/certiport_network_security.pdf" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/certiport/certiport_network_security.jpg" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">Network Security</h4>
+                </a>
+                <a href="assets/pdf/certiport/certiport_cybersecurity.pdf" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/certiport/certiport_cybersecurity.jpg" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">Cyber Security</h4>
+                </a>
+            </div>
+
+            <h3 class="text-white font-bold text-center pt-10 pb-3">UM Recognitions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="assets/img/um_certificates/mentor_certificate.png" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/um_certificates/mentor_certificate.png" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">CCE Skills Clinic Mentoring</h4>
+                </a>
+                <a href="assets/img/um_certificates/ctf_certificate.png" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/um_certificates/ctf_certificate.png" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">Crack the Code: Capture the Flag 2024</h4>
+                </a>
+                <a href="assets/img/um_certificates/progression_certificate.png" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/um_certificates/progression_certificate.png" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">Certificate of Progression</h4>
+                </a>
+            </div>
+
+            <h3 class="text-white font-bold text-center pt-10 pb-3">External Recognitions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="assets/pdf/external_certificates/reverion_evernt_certificate.pdf" target="_blank"
+                    class="glass-card bg-slate-900/80 p-4 rounded-xl block group">
+                    <div class="h-40 bg-black/50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="assets/img/external_certificates/reverion_evernt_certificate.jpg" alt="Cert"
+                            class="max-h-full object-contain group-hover:scale-110 transition-transform">
+                    </div>
+                    <h4 class="text-white font-bold text-center">Build Mindanao: AI and Blockchain Week 2025</h4>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer class="py-6 text-center text-slate-500 text-sm glass-dark">
+        <p>&copy; <span id="year"></span> Sayaka04.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

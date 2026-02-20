@@ -245,11 +245,12 @@
                 </div>
 
                 <div class="relative aspect-[21/9] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800">
-                    <video controls preload="metadata" playsinline class="w-full h-full object-cover"
-                        poster="./assets/img/video_thumbnail.jpg">
-                        <source src="./assets/video/demo.mp4" type="video/mp4">
-                        <p class="text-white p-4">Your browser does not support the video tag.</p>
-                    </video>
+                    <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/xIe0XtWrOAc?si=yJbiLMk24f9mUf4d" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
                 </div>
 
                 <div class="p-6 flex justify-between items-end">
@@ -267,7 +268,7 @@
 
                     <span
                         class="px-3 py-1 text-xs font-bold text-red-400 bg-red-400/10 rounded-full border border-red-400/20 animate-pulse">
-                        ● Live Recording
+                        ● Recording Demo
                     </span>
                 </div>
             </div>
